@@ -1,3 +1,10 @@
+# Python OOP Tutorial 2: Class Variables
+# https://youtu.be/BJ-VvGyQxho
+
+
+# CLASS VARIABLES VS INSTANCE VARAIBLES 
+
+
 class Employee:
 
     # class variable

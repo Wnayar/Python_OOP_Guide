@@ -16,6 +16,10 @@ class Person:
         # self.age += Person.grow_up   , in this case cant overwrite
         self.age += self.grow_up
 
+    # this is an exmaple where cant overwitre because put class variable
+    def become_spiderman(self):
+        self.name = Person.name_sample
+
 bill = Person(21, "BILL", "Quant")
 
 print(bill.age)
@@ -32,3 +36,12 @@ print(bill.__dict__)
 bill.grown()
 print(bill.__dict__)
 
+bill.become_spiderman()
+print(bill.__dict__)
+
+# so even thou we change the below name_sample because we put Person the class above it takes that 
+bill.name_sample = "NotSpiderman"
+print(bill.__dict__)
+
+bill.become_spiderman()
+print(bill.__dict__)

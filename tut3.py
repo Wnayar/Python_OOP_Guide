@@ -1,5 +1,10 @@
 # Python OOP Tutorial 3: classmethods and staticmethods
 # https://youtu.be/rq8cL2XMM5M
+
+
+# REGULAR METHODS(self instance) VS CLASS METHODS(class) VS STATIC METHODS(neither of the previous two)
+
+
 import datetime
 
 class Employee:

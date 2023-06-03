@@ -1,4 +1,4 @@
-# Python_OOP_Guide
+# Python_OOP_Guide & Quantconnect OOP understanding
 Python OOP guide following Corey Schafer's YouTube series 
 https://youtube.com/playlist?list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc
 
@@ -16,3 +16,4 @@ https://youtu.be/jCzT9XFZ5bw
 
 Skipped __part 6__ of the series as he was discussing Property decorators: getters, setters and deleters,  which did not seem relevant at the time and was fairly niche, but will come back in the future to code this, link to part 6 : https://youtu.be/jCzT9XFZ5bw
 
+__QUANTCONNECT: Understandign how quantconnect OOP was set up with inheritance, nested functions, attributes set up on intalization etc__

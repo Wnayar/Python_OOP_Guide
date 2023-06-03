@@ -9,8 +9,14 @@ class Person:
     def intialize(self, age):
         self.age = age
     
+
     def setstartdate(self, date):
         self.date = date
+
+
+    def addequity(self, equity):
+        self.equity = equity
+        return "boogey"
 
 
 bill = Person("BILL")
@@ -33,10 +39,14 @@ class orangefish(Person):
         self.setstartdate(2023)
         # trying to intalize on the set up, coudl set up date like this also without using a function 
         self.testnumber = 4
+        testvariable = self.addequity("SPY")
+        self.testvariable = testvariable
 
 
 will = orangefish("Will")
 will.intialize(6)
 print(will.__dict__)
 print(will.date)
+print(will.testvariable)
+
 

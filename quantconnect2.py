@@ -1,4 +1,6 @@
 # this shows that if return multiple boolean, it only returns true if all true, if one false it returns false, which makes sense true and false means false
+# it is esentially evaluating the statement
+
 
 def test():
     return True and False
@@ -18,6 +20,9 @@ def test4():
 def test5():
     return True and True and True
 
+# as you can see this evalautes to true as expected because for or just need oen to be true to evalaute to true 
+def newtest():
+    return True or False or True or False or False
 
 print(test())
 print(test1())
@@ -25,3 +30,4 @@ print(test2())
 print(test3())
 print(test4())
 print(test5())
+print(newtest())

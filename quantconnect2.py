@@ -24,6 +24,10 @@ def test5():
 def newtest():
     return True or False or True or False or False
 
+# basically if want to return multiple values use comma, seems to default to a tuple
+def returnmultiple():
+    return True, False
+
 print(test())
 print(test1())
 print(test2())
@@ -31,3 +35,4 @@ print(test3())
 print(test4())
 print(test5())
 print(newtest())
+print(type(returnmultiple()), returnmultiple())

@@ -26,6 +26,12 @@ will.intialize()
 print(will.__dict__)
 # so we have created some attributes in the algo class, and we have created a pair object which self.pair points to that has more functionality
 print(will.pairs.ticker)
+# the below is showing how everything in the pair class called is fixed so even if change will.returns, the self.newreturns doesnt change, it will only change if we call are dyamically calling intialize again and changing the self.returns everytime which si what quantconnect does when new data comes in
+print(will.pairs.newreturns)
+will.returns = 11
+print(will.pairs.newreturns)
+print(will.__dict__)
+
 
 
 # testing super init constructor, if miss out constructor of parent in the super will get thrown an eror

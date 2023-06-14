@@ -42,6 +42,7 @@ class Elites(Person):
     def __init__(self, name, age, occupation, pay, royalfamily):
         Person.__init__(self, name, age, occupation, pay)
         # super is another way to do but same outcome, super doesnt need self
+        # for super we pass in those arguments into our parent class which takes care of it for us, then we just have to worry about the addiotnal stuff
         # super().__init__(name, age, occupation, pay)
         self.royalfamily = royalfamily 
     

@@ -12,7 +12,7 @@ __Part 4: INHERITANCE CREATING SUBCLASSES( also with additonal or modiified argu
 
 __Part 5: DUNDER/MAGIC METHODS__
 
-__Part 5: PROPERTY DECORATORS (Getters: @property, Setters: @foo.setter, Deleters: @foo.deleter)__
+__Part 6: PROPERTY DECORATORS (Getters: @property, Setters: @foo.setter, Deleters: @foo.deleter)__
 
 
 __Quantconnect: Understandign how quantconnect OOP was set up with inheritance, nested functions, attributes set up on intalization etc__

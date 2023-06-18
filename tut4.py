@@ -81,8 +81,9 @@ mgr_1.print_emps()
 mgr_1.remove_emp(dev_1)
 mgr_1.print_emps()
 
-# great way to see method resolution order, and other userful info 
-# print(help(Developer))
+#******************* great way to see method resolution order, and other userful info *****************
+# can press q to exit the screen in the terminal 
+print(help(Developer))
 
 
 # isinstance and issubclass is used to check relationship 

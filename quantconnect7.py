@@ -21,4 +21,6 @@ print(testdict)
 print(y)
 #optional can add aditional paramater to pop for the default return value if key does not exists, this is done to prevent an error being thrown 
 z = testdict.pop("random", None)
+k = testdict.pop("foo", "hi")
+print(z, k)
 

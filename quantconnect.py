@@ -1,5 +1,4 @@
 # an attempt to understand how quantconnect works refer to the video link for the code that sparked this .py file link @3.25: https://youtu.be/WQwyKfef80k
-# new computer test git push
 
 class Person:
 

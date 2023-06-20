@@ -1,3 +1,5 @@
+# the documentation isnt very clear so this is a speculation
+# in the future if wanted to work with tiingo will have to work with documentation and log to see print reuslts to debug and figure out whats goign wrong 
 class data:
 
     def get(self, data):

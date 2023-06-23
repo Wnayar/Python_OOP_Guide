@@ -91,3 +91,28 @@ class Beta(Alpha):
 
 chungus = Beta()
 chungus.OnSecuritiesChanged([1, 2, 3, 4])
+
+
+
+# SECTION E
+# alternate way to make dict using dict function notice slight syntax differences
+yoda = dict(name = "yoda", age = 999)
+yoda1 = {"name":"yoda1", "age":999}
+# can create empty dict thru the function call too
+emptydict = dict()
+print(yoda)
+print(yoda1)
+print(emptydict)
+
+
+
+
+# SECTION F 
+# exploring .items() on dicts which have list values
+thor = {"name":"thor", "age":[999, 888, 777]}
+for x, y in thor.items():
+    print(x, y)
+# exploring len() on list and dict
+thorlist = [1, 2, "foo", False]
+print(len(thor))
+print(len(thorlist))

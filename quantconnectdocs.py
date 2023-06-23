@@ -1,6 +1,7 @@
 # The Qaunt connect documentation in python consists of function annotations as a means to highlight what the paramter and return values are, here I will explore this concept
 # https://peps.python.org/pep-3107/
 # https://stackoverflow.com/questions/14379753/what-does-mean-in-python-function-definitions maximouse response on stackoverflow
+# https://youtu.be/k56rEoRjK4k , credits to this youtube video for short explanation 
 
 # just setting y default value to 5 just to show how the annotations come right after the variable, also the annotations are ignored by interpretator
 #  meaning even thou I say x should be a string it has no meanign its just letting the user know

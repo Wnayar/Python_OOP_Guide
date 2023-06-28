@@ -45,3 +45,24 @@ print(datetime.now() + timedelta(31))
 
 # print(datetime.timedelta(31))
 # print(datetime.datetime.now() + datetime.timedelta(31))
+
+
+
+
+# Random testing of list comprehension
+templist = [1, 2, 3, 4, 5, 6, 7, 8, True, False, "Foo"]
+y = []
+
+for x in templist:
+    if isinstance(x, int) and  x > 5:
+        y.append(x)
+
+print(y)
+
+
+z = [x for x in templist if isinstance(x, int) and x > 5]
+print(z)
+
+
+k = [x for x in templist if type(x) == int and x > 5]
+print(z)

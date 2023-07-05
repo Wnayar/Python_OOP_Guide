@@ -41,3 +41,6 @@ x["test"] = 10
 value = x["test"]
 print(x["test"])
 print(x.__dict__)
+
+# this only works now because i set up the getter function 
+print(x["Symbol"])

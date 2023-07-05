@@ -1,3 +1,6 @@
+# Things explored here stemmed from the a-z series #tutorial 9
+# https://youtu.be/X7XwkHsE-4Y
+
 class PythonData:
     # they configured somethign here allowing to set like weather["Maxc"] = 3 for example, this is what i came up with to replicate it, their source code for this part was in c#
     # https://www.lean.io/docs/v2/lean-engine/class-reference/PythonData_8cs_source.html
@@ -56,3 +59,37 @@ bob.test()
 print(bob.__dict__)
 # this line below will give an error, cant access liek this unless u set up the get method above
 # print(bob["Symbol"])
+
+
+
+teststring = "     foobar baz   "
+newteststring = " "
+print(teststring.strip())
+
+# saying is not true as teststring.strip() returns a non 0 value
+if not teststring.strip():
+    print("hi")
+
+# saying if not false, which means true, because here newteststring essentialy returns 0, nothing
+if not newteststring.strip():
+    print("hinew")
+
+# here foo is a non zero value so its true, so if not true is false so wotn run
+if not "foo":
+    print("gotit")
+
+# so for the followign two its to just show that a white space is still considered non zero thus true, thus not true wotn run 
+if not " ":
+    print("newgotit")
+
+# but here no whitespace is nothing therefore if not false becoems true and runs
+if not "":
+    print("newestgotit")
+
+
+from datetime import *
+testtimestring = "2012-01-22 00:00:00"
+# esssentially strips ur given format into a datetime object, for soem reason when dint specify the hour it was goign to default 1
+timevariable = datetime.strptime(testtimestring, "%Y-%m-%d %H:%M:%S")
+print(testtimestring)
+print(timevariable)

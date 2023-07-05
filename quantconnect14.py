@@ -44,3 +44,15 @@ print(x.__dict__)
 
 # this only works now because i set up the getter function 
 print(x["Symbol"])
+
+
+
+class Random:
+    def test(self):
+        self.Symbol = "Sunshine"
+
+bob = Random()
+bob.test()
+print(bob.__dict__)
+# this line below will give an error, cant access liek this unless u set up the get method above
+# print(bob["Symbol"])

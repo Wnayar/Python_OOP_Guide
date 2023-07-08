@@ -25,9 +25,10 @@ OnData(x)
 
 
 
-# SECTION B: Intialize a list of assets by utilising a class
+# SECTION B: Intialize a list of assets by utilising a class and how the rteurn values work
 class QCAlgorithm():
     def symbols(self, symbol):
+        print("Hi")
         self.symbol = symbol + "cryptopair"
         return self.symbol
 
@@ -41,12 +42,21 @@ class CustomAlgo(QCAlgorithm):
         #  we do this so we can modify our algo and use the helper function from the qcalgorithm class in the cryptopair class 
         print(self)
 
+class Random:
+    count = 0
+    def __init__(self, number):
+        self.number = number + Random.count
+        Random.count += 1
+    
+    def update(self):
+        self.number += 1
 
 
 class CryptoPair:
     def __init__(self, algorithm, ticker, minimumVolume):
         self.ticker = algorithm.symbols(ticker)
         self.minimumVolume = minimumVolume
+        self.randomobject = Random(1)
 
         
 cryptostrategy = CustomAlgo()
@@ -54,3 +64,60 @@ cryptostrategy.Initialize()
 # so this means we have created a list of CyrptoPair objects, which we set the symbol and min volume for, and in quant connect tthey add the data here too etc
 print(cryptostrategy.pairs[0].ticker)
 print(cryptostrategy.pairs[0].minimumVolume)
+print(cryptostrategy.pairs[0].__dict__)
+print(cryptostrategy.pairs[0].randomobject.__dict__)
+print(cryptostrategy.pairs[0].randomobject.__dict__)
+cryptostrategy.pairs[0].randomobject.update()
+print(cryptostrategy.pairs[0].randomobject.__dict__)
+
+
+# okay so this is very intresting the above was inspired by tryign to understand why in quantconnect when this is written:
+# class Pair:
+    # def __init__(self, algorithm, ticker, minimumVolume): 
+    #     self.symbol = algorithm.AddCrypto(ticker, Resolution.Daily, Market.Bitfinex).Symbol
+# and everytime in the ondata when the symbol is called:
+    # def OnData(self, data):
+        
+    #     for pair in self.pairs: 
+    #         if not pair.rsi.IsReady:
+    #             return
+            
+    #         symbol = pair.symbol
+    #         rsi = pair.rsi.Current.Value 
+
+# the main point of concern was doesnt this mean im adding algorithm everytime?
+#  the answeer is no self.symbol which was created on the init is storing the symbol value alone
+# so you can think of it as static as the init is only called on construction once
+
+#  but then it gets confusing when you look below at the rsi indicators as such:
+# class Pair:
+#     def __init__(self, algorithm, ticker, minimumVolume): 
+#         self.symbol = algorithm.AddCrypto(ticker, Resolution.Daily, Market.Bitfinex).Symbol
+#         self.rsi    = algorithm.RSI(self.symbol, 14,  MovingAverageType.Simple, Resolution.Daily)
+# and in the OnData method
+    # def OnData(self, data):
+        
+    #     for pair in self.pairs: 
+    #         if not pair.rsi.IsReady:
+    #             return
+            
+    #         symbol = pair.symbol
+    #         rsi = pair.rsi.Current.Value 
+            
+    #         if self.Portfolio[symbol].Invested:
+    #             if not pair.Investable():
+    #                 self.Liquidate(symbol, "Not enough volume")
+    #             elif rsi < self.rsiExitThreshold:
+    #                 self.Liquidate(symbol, "RSI below threshold")
+    #             continue
+# so then you might be wondering how can they allocate a dynamic sort of thign to somethign created int eh consructor
+# well the answer is simple the return value of the self.rsi is not symbol which si static, we are returning the whole rsi object
+# so self.rsi is static int he sense its always pointing to the same rsi object this never changes, but withing the RSI object for example quantconnect can have methods called which update th eproperties
+#  so for exampel when u call rsi.Current.Value you are eitehr callign a properrty or fucntion which is trackign the most current value, it si prob beign updated inetrnally
+# i replciated htis with my update function in my random class above
+
+# so logn sorty shorts, when im calling self.symbol im not calling that function addcrypto, im just callign the symbol retruned value which i set out on construction, that function add crypto is only calle donce on construction 
+# which si why its very smart to intialize the pairs to be traded through a class like tgis, its very efficeint
+
+
+# SECTION C: Exploring assigning function to a variable

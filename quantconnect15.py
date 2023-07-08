@@ -121,3 +121,39 @@ print(cryptostrategy.pairs[0].randomobject.__dict__)
 
 
 # SECTION C: Exploring assigning function to a variable
+def chungus():
+    print("foobarbaz")
+    return 5
+
+chungus()
+x = chungus
+x()
+x = chungus()
+print(x)
+
+y = chungus
+print(y)
+print()
+
+z = chungus()
+print(z)
+#  so this just simply means when creating the z variable we call the chungus variable
+# which then stores the value 5 into z
+#  so when we call z from now on its just a number, which cna be proved below
+print(isinstance(z, int))
+# thus whenever quant connect isintializing such as this:
+# class Pair:
+#     def __init__(self, algorithm, ticker, minimumVolume): 
+#         self.symbol = algorithm.AddCrypto(ticker, Resolution.Daily, Market.Bitfinex).Symbol
+# all thsi means is we are callign the functin add crypto once, then we store the symbol value into self.symbol, so form now on self.symbol just refers to the symbol
+    # def OnData(self, data):
+        
+    #     for pair in self.pairs: 
+    #         if not pair.rsi.IsReady:
+    #             return
+            
+    #         symbol = pair.symbol
+    #         rsi = pair.rsi.Current.Value 
+# so that means whever u call .symbol from nwo it just refers to that stored symbol valeu u are nto calling the function again 
+# if u wanted to store a function to a variable which can be called u woudl have to do x = function, then call the function with x()
+# so on construction the values gets fixed , u nless u udpate them, the value can also be pointers to objects, and withign those objects u can do as you please in teh future such as update the rsi values

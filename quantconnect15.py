@@ -157,3 +157,11 @@ print(isinstance(z, int))
 # so that means whever u call .symbol from nwo it just refers to that stored symbol valeu u are nto calling the function again 
 # if u wanted to store a function to a variable which can be called u woudl have to do x = function, then call the function with x()
 # so on construction the values gets fixed , u nless u udpate them, the value can also be pointers to objects, and withign those objects u can do as you please in teh future such as update the rsi values
+
+
+# just exploring random multi variable intialization
+foo, bar = 10, 20
+print(bar)
+print(foo)
+baz = foo + bar
+print(baz)

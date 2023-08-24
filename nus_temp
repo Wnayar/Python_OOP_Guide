@@ -1,0 +1,128 @@
+// CS1101s Week 2 Reflection
+
+/*Recursion & Iteration*/
+
+/*Source Style Guide
+The programming style guide for the Source language is provided at https://docs.sourceacademy.
+org/source_styleguide.pdf.
+What is a programming style? Why is it important to follow a common programming style when
+writing programs?
+Textbook Sections
+We have covered so far in the lectures: all of Section 1.1, Section 1.2.1 and Section 1.2.2. This
+reflection covers Sections 1.2.1 and 1.2.2. Please read these sections carefully.*/
+
+
+
+/*Iterative vs Recursive Processes*/
+// A function that calls itself gives rise to an iterative process if the recursive call is always the last
+// operation that the function carries out. This means that the result of the recursive call is also
+// the result of the function.
+
+function f(x, y) {
+    return (x === 0) ? y : f(x - 1, y + 1);
+}
+
+// The body of function f has one recursive call. The result of the recursive call is the result of the
+// function. This means that the function gives rise to an iterative process.
+
+function g(x) {
+    return (x === 0) ? 0 : 1 + g(x - 1);
+}
+
+// The body of function g has one recursive call. The result of the recursive call is not the result
+// of the function. When the recursive call returns, its result needs to be added to 1. This opera-
+// tion is called a “deferred operation”. The presence of such a deferred operation means that the
+// corresponding process is a recursive process.
+// We say the function gives rise to a recursive process.
+
+
+/*The Fibonacci Series
+Leonardo Pisano Fibonacci (12th century CE), was interested in the sequence:
+0, 1, 1, 2, 3, 5, 8, 13, 21, . . .
+Each number is the sum of the previous two.
+Definition The function fib maps 0 to 0, 1 to 1, and every subsequent natural number n to the
+sum of the two previous Fibonacci numbers: fib(n − 2) + fib(n − 1).
+*/
+
+// Problems:
+// 1. Consider the following implementation of the factorial function:
+
+function factorial_recur(n) {
+    return n === 1
+    ? 1
+    : n * factorial_recur(n - 1);
+}
+
+// Is this function giving rise to a recursive or iterative process?
+
+
+
+// 2. In the lecture, it was mentioned that we can ”measure” the time taken for a program to run
+// as the number of ”steps” required.
+// The notion of a ”step” is debatable. Discuss different reasonable definitions of a ”step”.
+
+
+
+
+// 3. How many such steps does it take to compute the result of the function above when applied
+// to the number 5?
+
+
+
+
+// 4. How much space is required to compute the result of this function when applied to the
+// number 5? Count the number of deferred operations.
+
+
+
+
+// 5. Consider the following factorial function from the lecture:
+function factorial(n) {
+    return iter(1, 1, n);
+}
+
+function iter(product, counter, n) {
+    return counter > n
+    ? product
+    : iter(counter * product, counter + 1, n);
+}
+// How many steps does it take to compute 5! with this function?
+
+
+
+
+// 6. How much space is required to compute the result of your iterative function when applied
+// to the number 5? Count the number of deferred operations.
+
+
+
+
+// 7. Consider the following implementation of the Fibonacci function:
+function fib_recur(n) {
+    return n <= 1
+    ? n
+    : fib_recur(n - 1) + fib_recur(n - 2);
+}
+// Is this function giving rise to a recursive or iterative process?
+
+
+
+
+// 8. Consider the following implementation of the Fibonacci function from the lecture:
+function fib(n) {
+    return fib_iter(1, 0, n);
+}
+
+function fib_iter(a, b, count) {
+    return count === 0
+    ? b
+    : fib_iter(a + b, a, count - 1);
+}
+
+// How many steps does it take to compute fib(5)?
+
+
+
+
+// 9. How much space is required to compute fib(5) using the function given in Question 8?
+// Count the number of deferred operations.
